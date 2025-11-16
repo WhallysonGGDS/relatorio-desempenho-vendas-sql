@@ -60,7 +60,7 @@ O banco se chama **`relatorio_vendas`** e possui 3 tabelas:
 A métrica de valor da venda é:
 
 ```sql
-valor_venda = quantidade * preco_unitario * (1 - desconto_pct / 100),
+valor_venda = quantidade * preco_unitario * (1 - desconto_pct / 100)
 
 ▶️ Como rodar o projeto
 
