@@ -62,6 +62,8 @@ A métrica de valor da venda é:
 ```sql
 valor_venda = quantidade * preco_unitario * (1 - desconto_pct / 100)
 
+
+
 ▶️ Como rodar o projeto
 
 Importar o script SQL
