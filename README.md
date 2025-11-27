@@ -1,91 +1,48 @@
-# 📊 Projeto – Relatório de Desempenho de Vendas (SQL)
+# 🛒 Relatório de Vendas — SQL Analytics
 
-Este projeto simula um **sistema de relatórios de vendas** usando apenas **SQL**.  
-O objetivo é mostrar domínio de:
+Análise completa de vendas usando **MySQL**, integrando **clientes**, **produtos** e **transações** reais.
 
-- Modelagem simples de banco de dados relacional  
-- Criação de tabelas com chaves primárias e estrangeiras  
-- Consultas com **JOIN**, **GROUP BY**, **HAVING** e **ORDER BY**  
-- Cálculo de **KPIs de vendas** direto no banco
+## 🚀 Visão Geral do Projeto
+Este projeto constrói um banco de dados chamado **relatorio_vendas**, contendo tabelas de clientes, produtos e vendas, incluindo relacionamentos, chaves estrangeiras e consultas analíticas com KPIs essenciais.
 
----
+## 🧱 Modelagem do Banco de Dados
+### Estrutura das Tabelas
+- **clientes** — dados de localização e perfil
+- **produtos** — categoria, nome e preço
+- **vendas** — dados da transação, vendedor, canal e descontos
 
-## 🎯 Objetivo
+### Relacionamentos
+- vendas.id_cliente → clientes.id_cliente
+- vendas.id_produto → produtos.id_produto
 
-Construir, do zero, um mini banco de dados de vendas e responder perguntas de negócio como:
+## 📈 KPIs Implementados
+### 1️⃣ Faturamento por Região
+Analisa o faturamento total por região.
 
-- Quanto cada **região** fatura?  
-- Qual **vendedor** vende mais?  
-- Quais são os **produtos** que mais geram receita?  
-- Como filtrar regiões que faturam acima de um certo valor?
+### 2️⃣ Ranking de Vendedores
+Mostra quem mais gerou receita.
 
-Tudo isso apenas com **SQL puro**.
+### 3️⃣ Desempenho dos Produtos
+Top produtos por faturamento e quantidade vendida.
 
----
+### 4️⃣ Regiões com Faturamento Acima de 20k
+Filtro estratégico para tomada de decisão.
 
-## 🛠️ Tecnologias utilizadas
+## 🧪 Como Rodar o Projeto
+1. Abra o MySQL Workbench.
+2. Importe o arquivo `relatorio_vendas.sql`.
+3. Execute o script completo.
+4. O banco estará pronto para análises.
 
-- **MySQL Community Server**
-- **MySQL Workbench**
+## 🏁 Conclusão
+Projeto perfeito para portfólio de Analista de Dados, demonstrando domínio em SQL, modelagem e criação de KPIs.
 
----
+## 🤝 Contribuições
 
-## 🗄️ Modelagem do Banco de Dados
+Sugestões e melhorias são sempre bem-vindas!
 
-O banco se chama **`relatorio_vendas`** e possui 3 tabelas:
+## 🧑‍💻 Autor
 
-### `clientes`
-- `id_cliente` (PK, INT)  
-- `nome_cliente` (VARCHAR)  
-- `cidade` (VARCHAR)  
-- `estado` (CHAR(2))  
-- `regiao` (VARCHAR) – Norte, Nordeste, Sudeste, Sul, Centro-Oeste
-
-### `produtos`
-- `id_produto` (PK, INT)  
-- `nome_produto` (VARCHAR)  
-- `categoria` (VARCHAR)  
-- `preco_unitario` (DECIMAL)
-
-### `vendas`
-- `id_venda` (PK, INT)  
-- `id_cliente` (FK → clientes.id_cliente)  
-- `id_produto` (FK → produtos.id_produto)  
-- `data_venda` (DATE)  
-- `quantidade` (INT)  
-- `vendedor` (VARCHAR)  
-- `canal` (VARCHAR) – Online, Loja Física, Representante etc.  
-- `desconto_pct` (DECIMAL) – percentual de desconto aplicado
-
-A métrica de valor da venda é:
-
-```sql
-valor_venda = quantidade * preco_unitario * (1 - desconto_pct / 100)
-
-
-
-▶️ Como rodar o projeto
-
-Importar o script SQL
-
-No MySQL Workbench:
-
-Abra uma conexão (Local instance MySQL).
-
-Vá em File > Open SQL Script… e selecione o arquivo relatorio_vendas.sql.
-
-Clique no botão de raio (Execute) para rodar todo o script.
-
-Conferir os dados
-
-USE relatorio_vendas;
-
-SELECT * FROM clientes;
-SELECT * FROM produtos;
-SELECT * FROM vendas;
-
-
-Se as tabelas retornarem linhas, o banco está pronto.
-
-
-
+**Whallyson Gabriel Garcia da Silva**  
+Analista de Dados • Brasil  
+GitHub: https://github.com/WhallysonGGDS
